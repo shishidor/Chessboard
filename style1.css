@@ -1,0 +1,72 @@
+    /* changing effects at certain times with keyframes */
+    @keyframes color {
+        0% {
+           background: #ffffff;
+        }
+        50% {
+           background: #000000;
+        } 
+        100% {
+           background: #ffffff;
+        } 
+    }
+
+    @keyframes size {
+        0% {
+            font-size: 50px;
+        }
+        50% {
+            font-size: 10px;
+        }
+        100% {
+            font-size: 50px;
+        }
+    }
+
+    @keyframes spin {
+        from {
+            transform:rotate(0deg);
+        }
+        to {
+            transform:rotate(360deg);
+        }
+    }
+
+    /* expanding to the whole browser with absolute positioning */
+    #chessboard {
+        width: 100%;
+        height: 100%;
+        position: absolute; 
+        top: 0;
+        bottom: 0;
+        left: 0; 
+        right: 0;
+        font-family: Arial, sans-serif;
+        color: #9E9E9E;
+        text-transform: uppercase;
+        text-align: center; 
+    }   
+
+    /* apply the animation */
+    /* shorthand property: name, duration, iteration-count, timing function, direction, delay */            
+    #chessboard .box1 {
+		animation: color 6s 1 linear alternate,  
+		size 6s 1 linear alternate 6s,
+		spin 6s 1 linear alternate 12s;
+        font-size: 50px;    
+    }			
+
+	#chessboard .box2 {
+		animation: color 6s 1 reverse, 
+		size 6s 1 linear alternate 6s;
+        font-size: 50px;
+		background-color:#000000;
+    }
+
+    table, th, td{
+        border-collapse: collapse;
+    }
+
+    td{
+        width: 20%;
+    }
